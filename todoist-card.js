@@ -490,7 +490,7 @@ class TodoistCard extends LitElement {
                                 : html``}
                         </div>`;
                     })
-                    : html`<div class="todoist-list-empty">No uncompleted tasks!</div>`}
+                    : html`<div class="todoist-list-empty">Nothing to see here!</div>`}
                 ${this.config.show_completed && this.itemsCompleted
                     ? this.itemsCompleted.map(item => {
                             return html`<div class="todoist-item todoist-item-completed">
