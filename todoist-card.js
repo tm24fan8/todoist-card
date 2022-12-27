@@ -337,7 +337,7 @@ class TodoistCard extends LitElement {
                         this.hass
                             .callService('rest_command', 'todoist', {
                                 url: 'quick/add',
-                                payload: 'text=' + value + ' #' + state.attributes.project.name,
+                                payload: 'text=' + value + ' #' + state.attributes.project.name.replaceAll(' ',''),
                             })
                             .then(response => {
                                 input.value = '';
@@ -528,6 +528,7 @@ class TodoistCard extends LitElement {
                     type="text"
                     class="todoist-item-add"
                     placeholder="New item..."
+                    enterkeyhint="enter"
                     @keyup=${this.itemAdd}
                 />`
                 : html``}
